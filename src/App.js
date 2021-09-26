@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react'; 
+import Cars from './components/Cars'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  state = {
+    teslas: [
+      {
+        name: "Model Y", 
+        price: '100000', 
+        img: '/autos/ModelY.png'
+      }, 
+      {
+        name: "Roadster", 
+        price: '200000', 
+        img: '/autos/roadster.png'
+      },
+      {
+        name: 'Model 3', 
+        price: '20000', 
+        img: 'autos/fond.jpg'
+      }
+    ]
+  }
+
+  render() {
+    return (
+      <div>
+        <Nav />
+        <Cars 
+          teslas = {this.state.teslas}
+        /> 
+      </div>
+    )
+  }
 }
 
 export default App;
