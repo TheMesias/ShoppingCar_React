@@ -6,12 +6,12 @@ const styles = {
         width: '100%',     
     },
     card: {
-        width: '300px',
+        width: '25%',
         height: 'auto', 
         boxShadow: '0px 2px 17px -8px rgba(0,0,0,0.75)',
         position: 'relative', 
         borderRadius: '5px',
-        border: '1px solid #3C3C3C'
+        border: '1px solid #eee'
     }
     ,title: {
         textAlign: 'center' ,
@@ -31,7 +31,7 @@ const styles = {
 
 class Car extends Component {
     render() {
-        const { tesla } = this.props
+        const { tesla, agregarAlCarro } = this.props
         return (
             <div style={styles.card}>
                 <h3 style={styles.title}>{tesla.name}</h3>
@@ -39,7 +39,7 @@ class Car extends Component {
                     <img alt={tesla.name} src={tesla.img} style={styles.img} />
                 </div>
                 <p style={styles.p}>{tesla.price}$</p>
-                <Button>
+                <Button onClick={() => agregarAlCarro(Car)}>
                     Agregar a la compra
                 </Button>
             </div>

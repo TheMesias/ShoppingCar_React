@@ -21,7 +21,7 @@ class Button extends Component {
     render() {
         return (
             <div style={styles.cbutton}>
-                <button style={styles.button}>{this.props.children}</button>
+                <button style={styles.button} {...this.props}></button>
             </div>
         )
     }
